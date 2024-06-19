@@ -21,6 +21,11 @@ const LogWorkout = () => {
     e.preventDefault();
     // Save the workout information (e.g., send it to a server or save it in local storage)
     console.log("Workout logged:", workout);
+
+    // Save progress data to local storage
+    const progressData = JSON.parse(localStorage.getItem("progressData")) || [];
+    progressData.push({ ...workout, date: new Date().toLocaleDateString() });
+    localStorage.setItem("progressData", JSON.stringify(progressData));
   };
 
   return (
