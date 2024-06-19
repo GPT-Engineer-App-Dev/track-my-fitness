@@ -1,4 +1,5 @@
 import { Container, Text, VStack, Heading, Box, Button, Flex } from "@chakra-ui/react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { FaRunning, FaDumbbell, FaHeartbeat } from "react-icons/fa";
 
 const Index = () => {
@@ -21,7 +22,9 @@ const Index = () => {
             <Text mt={2}>Health</Text>
           </Box>
         </Flex>
-        <Button colorScheme="teal" size="lg">Get Started</Button>
+        <Link to="/log-workout">
+          <Button colorScheme="teal" size="lg">Log Workout</Button>
+        </Link>
       </VStack>
     </Container>
   );
